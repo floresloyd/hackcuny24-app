@@ -21,6 +21,10 @@ function Login() {
                 alert(err.message); // Show error message
             });
     }
+        const handleForgotPassword = () => {
+            history('/forgot')
+        }
+
 
     return (
         <div>
@@ -30,6 +34,7 @@ function Login() {
                 <input type="password" name='password' placeholder="Password"/>
                 <button type="submit"> Sign In</button>
             </form>
+            <span><button onClick={handleForgotPassword}>Forgot Password</button></span>
         </div>
     );
 }
