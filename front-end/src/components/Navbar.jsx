@@ -1,7 +1,13 @@
+
+
 function Navbar() {
     return (
         <div>
-            <h1> Nav </h1>
+            <a href='/login'> Login </a>
+            <a href='/register'> Register </a>
+            <a href='/'> Home </a>
+            <a href='/events'>Events</a>
+            
         </div>
     )
 }
