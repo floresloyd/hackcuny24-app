@@ -1,0 +1,54 @@
+/* Import Fredoka font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    margin: 0; /* Ensure the body has no margin to allow the video to cover full viewport */
+}
+
+.home-container {
+    position: relative; /* Needed for absolute positioning of the video */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents any overflow from the video */
+}
+
+.background-video {
+    position: absolute;
+    width: 100vw; /* Viewport width */
+    height: 100vh; /* Viewport height */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the video */
+    object-fit: cover; /* Ensures video covers the whole area */
+    z-index: -1; /* Sends the video to the back */
+}
+
+.home-content {
+    position: relative; /* Ensures content is on top of the video */
+    text-align: center;
+    font-size: 2em;
+    z-index: 2; /* Ensures content is above the background video */
+}
+
+.logo-image {
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto;
+    display: block; /* Centers the image */
+    margin: 0 auto 15px; /* Reduces space below the image */
+}
+
+.home-content h1 {
+    margin: 10px 0; /* Reduced space above and below the Moove NYC text */
+    font-size: 2.5em; /* Adjust as needed */
+    font-weight: 500; /* Decreases boldness */
+}
+
+.home-content p {
+    font-size: 1.5em; /* Adjust as needed */
+    color: black; /* Subdued text color for better readability */
+    margin-bottom: 10px; /* Reduces space below the slogan */
+    font-weight: 400; /* Further decreases boldness for a lighter appearance */
+}

@@ -1,9 +1,11 @@
+import React from 'react';
+import Home from './pages/Home'; // Adjust the path if necessary
+
 function App() {
   return (
-    <div>
-      <h1> test </h1>
+    <div> 
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
