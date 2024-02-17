@@ -1,6 +1,8 @@
 import csv
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
+import pandas as pd
+
 
 def create_bar_graph(csv_file):
     labels = []
@@ -29,5 +31,6 @@ def create_bar_graph(csv_file):
     plt.gca().yaxis.set_major_formatter(FuncFormatter(format_thousands))
 
     plt.show()
+
 
 create_bar_graph('obesityrates.csv')

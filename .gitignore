@@ -1,0 +1,13 @@
+# env*ironments
+/back-end/venv/*
+
+# dummy file
+*/test.txt
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.pyc
+.cpython-*
+__pycache__/app.cpython-39.pyc
