@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Home.css'; // Ensure this path is correct based on your project structure
 
 import logo from "./../Public/Photos/Logo.png"; // Adjust the path as needed
@@ -8,7 +8,7 @@ import Tennis from "./../Public/Videos/Tenis.mp4"; // Assuming typo fixed from T
 import Run from "./../Public/Videos/Run.mp4";
 
 function Home() {
-    // Create an array of video sources
+// Create an array of video sources
     const videos = [Soccer, Basketball, Tennis, Run];
     
     // useState to hold the selected video
@@ -21,8 +21,8 @@ function Home() {
         setSelectedVideo(randomVideo);
     }, []); // Empty dependency array means this effect runs once on mount
 
-    return (
-        <div className="home-container">
+  return (
+    <div className="home-container">
             <video autoPlay loop muted className="background-video">
                 <source src={selectedVideo} type="video/mp4"/>
                 Your browser does not support the video tag.
@@ -30,10 +30,10 @@ function Home() {
             <div className="home-content">
                 <img src={logo} alt="Logo" className="logo-image"/>
                 <h1>Move NYC!!</h1>
-                <p>Get Healthy, Get Moving, Get Move NYC!</p>
+<p>Get Healthy, Get Moving, Get Move NYC!</p>
             </div>
-        </div>
-    );
+    </div>
+  );
 }
 
-    export default Home;
+export default Home;
