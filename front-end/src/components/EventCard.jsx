@@ -6,6 +6,7 @@ function EventCard({ tag, title, description, author, date, addressLine1, addres
     const fullAddress = `${addressLine1} ${addressLine2}, ${city}, ${zip}`;
 
     return (
+        
         <div className="event-card">
             <div className="event-header">
                 <div className="event-tag">{tag}</div>

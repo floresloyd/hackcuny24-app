@@ -10,13 +10,12 @@ function App() {
   return (
     <div>
       <Navbar />
-
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot" element={<Forgot />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} /> {/* Correctly positioned Home component */}
           <Route path="/events" element={<Events />} />
         </Routes>
       </BrowserRouter>
