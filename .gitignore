@@ -1,6 +1,14 @@
 # env*ironments
 /back-end/venv/*
 
+# dummy file
+*/test.txt
+
+# pycharm
+*/.idea/*
+.idea/*
+*.idea/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
