@@ -2,8 +2,8 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Fireserver from '../Fireserver';
 const {userDatabase} = Fireserver;
-
-
+import './Login.css';
+import imag1 from "../Public/Photos/Central-Park.png"
 function Login() {
   const history = useNavigate();
 
@@ -33,18 +33,23 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1> Login </h1>
-      <form onSubmit={handleSignIn}>
-        <input type="text" name="email" placeholder="Email" />
-        <input type="password" name="password" placeholder="Password" />
-        <button type="submit"> Sign In</button>
+    <div className="LoginPage">
+       <img className="Central-Park" src={imag1} alt="Description of the image"></img>
+      
+       <div className="login-container">
+            <h1 className="login-title">Login</h1>
+      <form className="handleSignIn" onSubmit={handleSignIn}>
+        <input className="text" type="text" name="email" placeholder="Email" />
+        <input className="password" type="password" name="password" placeholder="Password" />
+        <button className="Sign-in" type="submit"> Sign In</button>
       </form>
       <span>
-      <button onClick={handleRegister}>Register</button>
-        <button onClick={handleForgotPassword}>Forgot Password</button>
+      <button className="handleRegister" onClick={handleRegister}>Register</button>
+        <button className="handleForgotPassword" onClick={handleForgotPassword}>Reset Password</button>
       </span>
     </div>
+  </div>
+
   );
 }
 

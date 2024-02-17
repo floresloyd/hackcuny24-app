@@ -1,5 +1,8 @@
 import { sendPasswordResetEmail } from "firebase/auth";
 import userDatabase from "../Fireserver";
+import './Forgot.css';
+import CentralParkImage from "../Public/Photos/Central-Park1.png"; // Update the import path as necessary
+
 
 function Forgot() {
   const handleReset = (e) => {
@@ -18,12 +21,15 @@ function Forgot() {
   };
 
   return (
-    <div>
-      <h1> Forgot Password?</h1>
-      <form onSubmit={handleReset}>
-        <input type="email" name="email" placeholder="Email" />
-        <button type="submit">Reset</button>
-      </form>
+    <div className="Reset">
+      <img className="Central-Park" src={CentralParkImage} alt="Central Park" />
+      <div className="Reset-container"> {/* Make sure this matches the class in your CSS */}
+        <h1 className="Reset-Password">Reset Password</h1>
+        <form onSubmit={handleReset}>
+          <input className="Email" type="email" name="email" placeholder="Email" />
+          <button className="handle-reset" type="submit">Reset</button>
+        </form>
+      </div>
     </div>
   );
 }

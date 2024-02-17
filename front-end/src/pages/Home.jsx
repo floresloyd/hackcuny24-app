@@ -31,8 +31,7 @@ function Home() {
                 </video>
                 <div className="home-content">
                     <img src={logo} alt="Logo" className="logo-image"/>
-                    <h1>Move NYC!!</h1>
-                    <p>Get Healthy, Get Moving, Get Move NYC!</p>
+                    <p className="app-slogan">Get Healthy, Get Connected, Get Move NYC!</p> {/* Unique class name for the slogan */}
                 </div>
             </div>
             <LearnMore /> {/* This includes LearnMore on the Home page only */}
