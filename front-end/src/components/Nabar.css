@@ -25,7 +25,7 @@
     top: 0;
     left: 0;
     z-index: 3;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 24px;
 }
@@ -38,7 +38,7 @@
     border: none; /* Remove button border for consistency */
     cursor: pointer; /* Cursor style for clickable elements */
     padding-right: 20px; /* Specific right padding as requested */
-    font-family: 'Rubik', sans-serif; /* Ensure font consistency */
+    font-family: 'Roboto', sans-serif; /* Ensure font consistency */
     font-weight: bold; /* Match nav-link font weight */
     font-size: 24px; /* Match nav-link font size */
     /* Align text to center if needed */

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300..700&display=swap');
+
 .learn-more-container {
     background-color: white;
     padding: 20px;
@@ -21,6 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .learn-more-image img {
@@ -38,6 +41,8 @@
 .learn-more-text {
     padding: 20px;
     text-align: justify;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 /* Media query for responsiveness */

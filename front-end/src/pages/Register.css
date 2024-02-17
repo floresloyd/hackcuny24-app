@@ -1,0 +1,68 @@
+
+.Register {
+    position: relative; /* Set relative positioning for the parent container */
+    height: 100vh;
+    width: 150vw;
+    overflow: hidden; /* Prevents any scrollbars if the content overflows */
+    position: fixed; /* Fixed position to stay put on scroll */
+}
+
+/* Style for the Manhattan image */
+.Manhattan {
+    position: fixed; /* Fixed position to stay put on scroll */
+    left: 0; /* Align to the left side */
+    width: 50vw; /* Half of the viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Ensures the image covers the area without being stretched */
+    z-index: -1; /* Ensure the image stays behind the form */
+}
+
+/* Container for the register form */
+.Register-Form {
+    position: absolute; /* Absolutely position the container */
+    left: 50%; /* Start at the middle of the screen */
+    top: 50%; /* Center from the top */
+    transform: translate(-50%, -50%); /* Offset the container for centering */
+    max-width: 400px; /* Maximum width */
+    width: calc(50vw - 40px); /* 50% of the viewport width minus padding */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form items horizontally */
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Style for the title within the form */
+.Register-Text {
+    color: black;
+    margin-bottom: 20px; /* Space below the title */
+    margin-left: -30px;
+}
+
+/* Styles for form inputs */
+.Email-container,
+.Password-container,
+.Fname-container,
+.Lname-container {
+    width: 100%; /* Adjust width to match the login page */
+    padding: 10px;
+    margin-bottom: 20px; /* Space below the input field */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Style for the Signup button */
+.Signup-container {
+    width: 100%; /* Match the width of the input fields */
+    padding: 10px;
+    background-color: #1D2088;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Signup-container:hover {
+    background-color: #353535;
+}
