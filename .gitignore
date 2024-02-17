@@ -4,6 +4,9 @@
 # dummy file
 */test.txt
 
+# pycharm
+*/.idea/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
