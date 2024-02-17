@@ -1,0 +1,10 @@
+# env*ironments
+/back-end/venv/*
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.pyc
+.cpython-*
+__pycache__/app.cpython-39.pyc
