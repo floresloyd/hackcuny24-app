@@ -1,83 +1,73 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { collection, getDocs } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import Fireserver from '../Fireserver';
 import EventCard from '../components/EventCard';
-const {eventDatabase} = Fireserver;
+import AddEventForm from '../components/AddEventForm';
+
+const { eventDatabase, userDataDatabase } = Fireserver;
+
 
 function Events() {
   const [events, setEvents] = useState([]);
-  const [user, setUser] = useState(null); // State to keep track of the user's auth status
-  const auth = getAuth()
-  const history = useNavigate();
+  const [user, setUser] = useState(null);
+  const [showAddForm, setShowAddForm] = useState(false);
+  const auth = getAuth();
+  const navigate = useNavigate();
 
-    // Check user authentication state
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-          setUser(currentUser); // currentUser will be null if not logged in
-        });
-    
-        // Cleanup subscription on unmount
-        return () => unsubscribe();
-      }, []);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      if (currentUser) {
+        // Do something when the user is logged in
+        // Currently, this is just setting the user state
+      } else {
+        // Handle user not logged in
+      }
+    });
+  
+    return () => unsubscribe();
+  }, [auth]);
 
-
-  // Loads Event data from the database
   useEffect(() => {
     const eventcolRef = collection(eventDatabase, 'events');
 
     getDocs(eventcolRef).then(snapshot => {
       const eventsArray = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
       setEvents(eventsArray);
-      console.log(events)
     }).catch(err => {
-      console.log(err.message);
+      console.error(err.message);
     });
   }, []);
 
-
-
   const handleAddEvent = () => {
-    // Redirect to login if user is not signed in
     if (!user) {
-      // You can use navigate from useNavigate hook to redirect
-      // navigate('/login');
-      alert('User not logged in. Redirect to login page.');
-      history('/login')
-      // Alternatively, you could display a message or open a login modal here
+      alert('User not logged in. Redirecting to login page.');
+      navigate('/login');
       return;
     }
-    
-    console.log('Add Event');
-    // Implement the logic to add an event
-
+    setShowAddForm(true);
   };
+
+  const onEventAdded = () => {
+    setShowAddForm(false);
+    // TODO: Refresh your events list here if needed
+  };
+
+  const handleClose = () => setShowAddForm(false);
 
   return (
     <div>
       <h1>Events</h1>
       <button onClick={handleAddEvent}> Add event</button>
+      {showAddForm && <AddEventForm onEventAdded={onEventAdded} onClose={handleClose} />}
 
       <div>
         {events.map(event => (
-          <EventCard
-            key={event.id}
-            tag={event.tag}
-            title={event.title}
-            description={event.description}
-            author={event.author}
-            date={event.date}
-            addressLine1={event.address_line1}
-            addressLine2={event.address_line2}
-            city={event.city}
-            zip={event.zip}
-            joined={event.joined}
-            maxJoined={event.max_joined}
-          />
+          <EventCard key={event.id} {...event} />
         ))}
       </div>
-
     </div>
   );
 }
