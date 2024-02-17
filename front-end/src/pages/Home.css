@@ -28,8 +28,11 @@ body {
 
 .home-content {
     position: relative; /* Ensures content is on top of the video */
-    text-align: center;
-    font-size: 2em;
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically */
+    text-align: center; /* Ensures text is centered */
     z-index: 2; /* Ensures content is above the background video */
 }
 
@@ -37,18 +40,15 @@ body {
     max-width: 100%; /* Ensures the image is responsive */
     height: auto;
     display: block; /* Centers the image */
-    margin: 0 auto 15px; /* Reduces space below the image */
+    margin: 0 auto; /* Centers the logo */
+    position: relative; /* Allows leftward adjustment */
+    left: -10px; /* Moves the logo slightly to the left; adjust as needed */
 }
 
-.home-content h1 {
-    margin: 10px 0; /* Reduced space above and below the Moove NYC text */
-    font-size: 2.5em; /* Adjust as needed */
-    font-weight: 500; /* Decreases boldness */
+.home-content h1, .home-content p {
+    margin-top: 20px; /* Adds space above the text, adjust as needed */
 }
-
-.home-content p {
-    font-size: 1.5em; /* Adjust as needed */
-    color: black; /* Subdued text color for better readability */
-    margin-bottom: 10px; /* Reduces space below the slogan */
-    font-weight: 400; /* Further decreases boldness for a lighter appearance */
+.home-text{
+    font-size: 40px;
+    transform: translateX(10px); /* Move left by 30 pixels */
 }

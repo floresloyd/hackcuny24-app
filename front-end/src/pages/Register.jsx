@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import userDatabase from "../Fireserver";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+
+import Fireserver from '../Fireserver';
+const {userDatabase} = Fireserver;
+
 
 function Login() {
   const history = useNavigate(); // Routes
@@ -26,6 +29,8 @@ function Login() {
       <form onSubmit={(e) => handleSignUp(e)}>
         <input type="text" name="email" placeholder="Email" />
         <input type="password" name="password" placeholder="Password" />
+        <input type='text' name='firstname' placeholder="First Name" required/>
+        <input type='text' name='lastinitial' placeholder="Last Initial" required/>
         <button> signup</button>
       </form>
     </div>

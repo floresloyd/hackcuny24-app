@@ -1,0 +1,40 @@
+/* EventCard.css */
+
+.event-card {
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.event-title-date {
+    text-align: left;
+}
+
+.event-title, .event-description, .event-author, .event-location {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+.event-join-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-self: flex-start;
+}
