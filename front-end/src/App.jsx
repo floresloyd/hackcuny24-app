@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Register from "./pages/Register";
 import Events from "./pages/Events";
 import Forgot from "./pages/Forgot";
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 function App() {
@@ -44,16 +44,6 @@ function App() {
           <Route path="/events" element={<Events />} />
         </Routes>
       </BrowserRouter>
-
-      {/* Conditional rendering based on data state */}
-      {data ? (
-        <div>
-          <h2>Data from server:</h2>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </div>
-      ) : (
-        <p>Loading data...</p>
-      )}
 
     </div>
   );
