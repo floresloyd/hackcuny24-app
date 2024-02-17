@@ -9,8 +9,8 @@ import Forgot from "./pages/Forgot";
 function App() {
   return (
     <div>
-      <Navbar />
       <BrowserRouter>
+      <Navbar />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

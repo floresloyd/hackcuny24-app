@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Home.css'; // Make sure this path matches the location of your CSS file
 import '../components/LearnMore.jsx';
 

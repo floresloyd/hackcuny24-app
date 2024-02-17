@@ -1,6 +1,8 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import userDatabase from "../Fireserver";
+import Fireserver from '../Fireserver';
+const {userDatabase} = Fireserver;
+
 
 function Login() {
   const history = useNavigate();
@@ -21,8 +23,13 @@ function Login() {
         alert(err.message); // Show error message
       });
   };
+
   const handleForgotPassword = () => {
     history("/forgot");
+  };
+
+  const handleRegister = () => {
+    history("/register");
   };
 
   return (
@@ -34,6 +41,7 @@ function Login() {
         <button type="submit"> Sign In</button>
       </form>
       <span>
+      <button onClick={handleRegister}>Register</button>
         <button onClick={handleForgotPassword}>Forgot Password</button>
       </span>
     </div>
