@@ -25,7 +25,7 @@ const app = initializeApp(firebaseConfig);
 const userDatabase = getAuth(app);
 //Initialize Databases
 const eventDatabase = getFirestore(app)
-const userDatabase = getFirestore(app)
+const userDataDatabase = getFirestore(app)
 
 
-export default {userDatabase, eventDatabase, userDatabase};
+export default {userDatabase, eventDatabase, userDataDatabase};
