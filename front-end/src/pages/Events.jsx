@@ -1,41 +1,37 @@
-/* eslint-disable no-unused-vars */
+// Events.jsx
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { doc, getDoc } from "firebase/firestore";
 import Fireserver from "../Fireserver";
 import EventCard from "../components/EventCard";
 import AddEventForm from "../components/AddEventForm";
+import './Events.css'; // Make sure the CSS file is linked
 
 const { eventDatabase, userDataDatabase } = Fireserver;
 
 function Events() {
-  const [events, setEvents] = useState([]); // Available Windows
-  const [user, setUser] = useState(null); // Current user
-  const [showAddForm, setShowAddForm] = useState(false); // State that manages drop down of add job
-  const auth = getAuth(); // Current user base object
-  const navigate = useNavigate(); // Allows us to reroute
-  const [currentAuthor, setAuthor] = useState(""); // Current author of event
+  const [events, setEvents] = useState([]);
+  const [user, setUser] = useState(null);
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [showSortDropdown, setShowSortDropdown] = useState(false);
+  const auth = getAuth();
+  const navigate = useNavigate();
+  const [currentAuthor, setAuthor] = useState("");
 
-  // ACESS USER NAME USING UID / userid
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       if (currentUser) {
-        // User is logged in
-        const userDocRef = doc(
-          userDataDatabase,
-          "userDataDatabase",
-          currentUser.uid
-        );
+        const userDocRef = doc(userDataDatabase, "userDataDatabase", currentUser.uid);
         getDoc(userDocRef)
           .then((docSnap) => {
             if (docSnap.exists()) {
               const firstname = docSnap.data().firstname;
               const lastinitial = docSnap.data().lastinitial;
               const fullName = firstname + " " + lastinitial + ".";
-              setAuthor(fullName); // This will schedule an update to 'currentAuthor'
+              setAuthor(fullName);
             } else {
               console.log("No user data available");
             }
@@ -43,17 +39,13 @@ function Events() {
           .catch((error) => {
             console.error("Error fetching user data:", error);
           });
-      } else {
-        // Handle user not logged in
       }
     });
     return () => unsubscribe();
-  }, [auth]); // Only re-run the effect if 'auth' changes
+  }, [auth]);
 
-  // Pulls all events
   useEffect(() => {
     const eventcolRef = collection(eventDatabase, "events");
-
     getDocs(eventcolRef)
       .then((snapshot) => {
         const eventsArray = snapshot.docs.map((doc) => ({
@@ -68,9 +60,20 @@ function Events() {
   }, []);
 
   useEffect(() => {
-    // This effect runs when 'currentAuthor' changes
-    console.log("Current Author:", currentAuthor);
-  }, [currentAuthor]); // Only re-run the effect if 'currentAuthor' changes
+    function handleClickOutside(event) {
+      if (showSortDropdown && !event.target.closest('.sortButtonContainer')) {
+        setShowSortDropdown(false);
+      }
+    }
+
+    if (showSortDropdown) {
+      window.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [showSortDropdown]);
 
   const handleAddEvent = () => {
     if (!user) {
@@ -81,19 +84,12 @@ function Events() {
     setShowAddForm(true);
   };
 
-  {
-    /** ADD EVENT BUTTON OPEN/CLOSE FORM */
-  }
   const onEventAdded = () => {
     setShowAddForm(false);
-    // TODO: Refresh your events list here if needed
   };
 
   const handleClose = () => setShowAddForm(false);
 
-  {
-    /** SORTING BUTTON FUNCTIONALITY  */
-  }
   const handleDateSort = () => {
     const sortedEvents = [...events].sort((a, b) => {
       const dateA = new Date(a.date);
@@ -127,36 +123,52 @@ function Events() {
     setEvents(sortedEvents);
   };
 
+  const toggleSortDropdown = (event) => {
+    event.stopPropagation(); // Prevents the click event from reaching the window listener immediately
+    setShowSortDropdown(!showSortDropdown);
+    console.log("Toggling sort dropdown. Current state:", !showSortDropdown); // For debugging
+  };
+
   return (
-    <div>
-      <h1>Events</h1>
-      <button onClick={handleAddEvent}> Add event</button>
-      <button onClick={handleDateSort}> Sort: Date</button>
-      <button onClick={handleSortAvailability}> Sort: Availability</button>
-      <button onClick={handleSortTag}> Sort: Tag</button>
-      {showAddForm &&
-        currentAuthor && ( // Only render AddEventForm if currentAuthor is set
-          <AddEventForm
-            onEventAdded={onEventAdded}
-            onClose={handleClose}
-            author={currentAuthor} // Pass the author name
-            uid={user?.uid}
-          />
-        )}
-      <div>
-        {events.map((event) => (
-          <EventCard
-            key={event.id}
-            {...event}
-            joinedUsers={event.joinedUsers || []} // Pass joinedUsers, defaulting to an empty array if not present
-            maxJoined={event.max_joined} // Pass max_joined
-            userUID={user?.uid} // Pass the current user's UID
-            authorUID={auth.uid}
-          />
-        ))}
-      </div>
+    <div className="events-container"> {/* This wrapper ensures content starts below the Navbar */}
+
+      <button onClick={handleAddEvent} className="addEventButton">Add event</button>
+      <div className="sortButtonWrapper">
+      <button onClick={toggleSortDropdown} className="sortButton">Sort</button>
+      {showSortDropdown && (
+        <div className="dropdown">
+          <div onClick={handleDateSort} className="dropdown-item">Sort: Date</div>
+          <div onClick={handleSortAvailability} className="dropdown-item">Sort: Availability</div>
+          <div onClick={handleSortTag} className="dropdown-item">Sort: Tag</div>
+        </div>
+      )}
     </div>
-  );
+        {showAddForm && currentAuthor && (
+ <div className="modal-overlay" onClick={() => setShowAddForm(false)}>
+  <div onClick={(e) => e.stopPropagation()}> {/* Prevents click inside the form from closing it */}
+    <AddEventForm
+        onEventAdded={onEventAdded}
+        onClose={() => { setShowAddForm(false); }}
+        author={currentAuthor}
+        uid={user?.uid}
+    />
+  </div>
+</div>
+)}
+        <div>
+            {events.map((event) => (
+                <EventCard
+                    key={event.id}
+                    {...event}
+                    joinedUsers={event.joinedUsers || []}
+                    maxJoined={event.max_joined}
+                    userUID={user?.uid}
+                    authorUID={auth.uid}
+                />
+            ))}
+        </div>
+    </div>
+);
 }
 
 export default Events;
