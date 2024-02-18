@@ -59,8 +59,8 @@ function Analysis() {
             <img src={sunset} alt="Sunset" style={sunsetSize} />
 
             <div style={paragraphStyle}>
-                <p> The graphs reveal a concerning rise in obesity across NYC boroughs, with Queens
-                    standing out at almost 50% of its population facing weight-related issues. This
+                <p> The bar graph reveals a concerning rise in obesity across NYC boroughs, with Queens
+                    and brooklyn standing out at almost 50% of its population facing weight-related issues. This
                     alarming trend highlights the urgent need for intervention. However, a glimmer of hope emerges from
                     other graphs showcasing diverse sports activities in popular parks. Beyond recreation, these activities
                     build a healthier community. Engaging in sports not only combats obesity but also promotes cardiovascular
