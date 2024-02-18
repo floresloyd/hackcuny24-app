@@ -2,7 +2,7 @@
 
 .nav-link {
     text-decoration: underline; /* Underline all links */
-    color: #353535; /* Adjust color as needed for visibility against your background */
+    color: black; /* Adjust color as needed for visibility against your background */
     margin: 0 15px; /* Adjust spacing as needed */
     background: none; /* For the button to match other links */
     border: none; /* Remove button border */
@@ -10,7 +10,7 @@
 }
 
 .nav-link:hover {
-    color:#2E2E2E; /* Slight color change on hover for visual feedback */
+    color:grey; /* Slight color change on hover for visual feedback */
 }
 
 .navbar {
@@ -25,20 +25,20 @@
     top: 0;
     left: 0;
     z-index: 3;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 24px;
 }
 
 .sign-out {
     text-decoration: underline; /* Match nav-link style */
-    color: #353535; /* Match nav-link color */
+    color: black; /* Match nav-link color */
     margin: 0 15px; /* Match nav-link margin */
     background: none; /* Ensure consistency with nav-link */
     border: none; /* Remove button border for consistency */
     cursor: pointer; /* Cursor style for clickable elements */
     padding-right: 20px; /* Specific right padding as requested */
-    font-family: 'Rubik', sans-serif; /* Ensure font consistency */
+    font-family: 'Roboto', sans-serif; /* Ensure font consistency */
     font-weight: bold; /* Match nav-link font weight */
     font-size: 24px; /* Match nav-link font size */
     /* Align text to center if needed */

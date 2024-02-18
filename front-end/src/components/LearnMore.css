@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300..700&display=swap');
+
+.learn-more-container {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.learn-more-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px; /* Adjust the space between sections */
+    flex-wrap: wrap;
+}
+
+.learn-more-section .learn-more-text,
+.learn-more-section .learn-more-image {
+    flex: 1;
+    max-width: 40%; /* Reduced to bring text and image closer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.learn-more-image img {
+    border-radius: 50%;
+    width: 350px; /* Increased size for a larger radius */
+    height: 350px; /* Increased size for a larger radius */
+    object-fit: cover;
+    margin: 0 20px; /* Add margin to space out the text and image */
+}
+
+.learn-more-section:nth-child(2) {
+    flex-direction: row-reverse;
+}
+
+.learn-more-text {
+    padding: 20px;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .learn-more-section {
+        flex-direction: column;
+    }
+
+    .learn-more-section .learn-more-text,
+    .learn-more-section .learn-more-image {
+        max-width: 80%; /* Adjusted for better mobile responsiveness */
+        margin-bottom: 20px; /* Space between image and text on mobile */
+    }
+
+    .learn-more-section:nth-child(2) {
+        flex-direction: column-reverse; /* Keeps text on top for the second section */
+    }
+}
