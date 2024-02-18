@@ -9,6 +9,7 @@ import Events from "./pages/Events";
 import Forgot from "./pages/Forgot";
 import { useEffect, useState } from 'react';
 import Leaderboard from './pages/Leaderboard';
+import Analysis from './pages/Analysis';
 
 
 
@@ -48,6 +49,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />
           <Route path="/leaderboard" element={<Leaderboard/>} /> 
+          <Route path="/analysis" element={<Analysis/>} /> 
         </Routes>
       </BrowserRouter>
 
