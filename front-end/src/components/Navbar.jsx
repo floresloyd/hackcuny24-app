@@ -1,46 +1,46 @@
-import './Nabar.css'; // Correct the file name if necessary
-import { signOut, onAuthStateChanged } from "firebase/auth";
-import { useState, useEffect } from 'react';
+import './Navbar.css';
+import { signOut, getAuth, onAuthStateChanged } from "firebase/auth";
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Fireserver from '../Fireserver';
-
-const { userDatabase } = Fireserver;
+import { Link } from 'react-router-dom'; // Use the Link component for navigation without page reload
 
 function Navbar() {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
+    const auth = getAuth(); // You should use the auth instance from the firebase/auth
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(userDatabase, (currentUser) => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
         });
 
-        // Cleanup the listener on unmount
-        return unsubscribe;
-    }, []);
+        return unsubscribe; // Cleanup the listener on unmount
+    }, [auth]); // Depend on the auth object
 
-    const handleSignOut = () => {
-        signOut(userDatabase).then(() => {
+    const handleSignOut = async () => {
+        try {
+            await signOut(auth);
             console.log("User signed out");
             navigate('/login'); // Redirect to login after sign out
-        }).catch((error) => {
-            // Handle errors here
+        } catch (error) {
             console.error("Sign out error", error);
-        });
+        }
     };
 
     return (
-        <nav className="navbar">
+    <div className="main-content">
+       <nav className="navbar">
             <div> {/* Container for grouped items */}
-                <a href="/" className="nav-link">Home</a>
-                <a href="/events" className="nav-link">Events</a>
+                <Link to="/" className="nav-link">Home</Link>
+                <Link to="/events" className="nav-link">Events</Link>
             </div>
             {user ? (
                 <button onClick={handleSignOut} className="nav-link sign-out">Sign Out</button>
             ) : (
-                <a href="/login" className="nav-link sign-out">Login</a>
+                <Link to="/login" className="nav-link sign-out">Login</Link>
             )}
         </nav>
+    </div>
     );
 }
 

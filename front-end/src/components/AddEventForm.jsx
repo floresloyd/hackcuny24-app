@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import { collection, addDoc, doc, updateDoc, increment } from 'firebase/firestore';
 import Fireserver from '../Fireserver';
+import './AddEventForm.css';
 const { eventDatabase, userDataDatabase } = Fireserver;
 
 function AddEventForm({ onEventAdded, onClose, author, uid }) {
@@ -45,18 +46,18 @@ function AddEventForm({ onEventAdded, onClose, author, uid }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="tag" type="text" placeholder="Tag" onChange={handleChange} />
-      <input name="title" type="text" placeholder="Title" onChange={handleChange} />
-      <textarea name="description" placeholder="Description" onChange={handleChange}></textarea>
-      <input name="date" type="date" placeholder="Date" onChange={handleChange} />
-      <input name="address_line1" type="text" placeholder="Address Line 1" onChange={handleChange} />
-      <input name="address_line2" type="text" placeholder="Address Line 2" onChange={handleChange} />
-      <input name="city" type="text" placeholder="City" onChange={handleChange} />
-      <input name="zip" type="text" placeholder="ZIP Code" onChange={handleChange} />
-      <input name="max_joined" type="number" placeholder="Max Joined" onChange={handleChange} />
-      <button type="submit">Submit</button>
-      <button type="button" onClick={onClose}>Close</button> {/* Close Button */}
+    <form onSubmit={handleSubmit} >
+      <input className='Tag' name="tag" type="text" placeholder="Tag" onChange={handleChange} />
+      <input className='Title' name="title" type="text" placeholder="Title" onChange={handleChange} />
+      <textarea className='description' name="description" placeholder="Description" onChange={handleChange}></textarea>
+      <input className='Date' name="date" type="date" placeholder="Date" onChange={handleChange} />
+      <input className='Address_line1' name="address_line1" type="text" placeholder="Address Line 1" onChange={handleChange} />
+      <input className='Address_line2' name="address_line2" type="text" placeholder="Address Line 2" onChange={handleChange} />
+      <input className='City'  name="city" type="text" placeholder="City" onChange={handleChange} />
+      <input className='Zip' name="zip" type="text" placeholder="ZIP Code" onChange={handleChange} />
+      <input className='Max_joined' name="max_joined" type="number" placeholder="Max Joined" onChange={handleChange} />
+      <button className='Submit' type="submit">Submit</button>
+      <button className='Close' type="button" onClick={onClose}>Close</button> {/* Close Button */}
     </form>
   );
 }

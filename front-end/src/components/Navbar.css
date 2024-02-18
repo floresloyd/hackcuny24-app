@@ -28,6 +28,8 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 24px;
+    background-color: transparent; /* White with reduced transparency */
+
 }
 
 .sign-out {
@@ -41,8 +43,8 @@
     font-family: 'Roboto', sans-serif; /* Ensure font consistency */
     font-weight: bold; /* Match nav-link font weight */
     font-size: 24px; /* Match nav-link font size */
-    /* Align text to center if needed */
     display: inline-flex; /* Adjust display to align text properly */
     align-items: center; /* Vertically center the text */
     justify-content: center; /* Horizontally center the text, if needed */
+    margin-right: 20px;
 }
