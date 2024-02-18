@@ -1,18 +1,18 @@
-# env*ironments
-/back-end/venv/*
+# Virtual Environments and security variables
+*/venv/
+**/.env
 
-# dummy file
-*/test.txt
+# SSL certificate and private key
+*.pem
 
-# pycharm
-*/.idea/*
-.idea/*
-*.idea/*
+# Google API credentials
+*/credentials.json
 
-# Byte-compiled / optimized / DLL files
+# IDE/ OS generated files
+.idea/
+.DS_Store
+
+# Bytecode cache directories / Compiled Python files / CPython version-specific bytecode files
 __pycache__/
 *.py[cod]
-*$py.class
-.pyc
-.cpython-*
-__pycache__/app.cpython-39.pyc
+*.cpython-*
