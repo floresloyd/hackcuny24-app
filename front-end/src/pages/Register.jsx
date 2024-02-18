@@ -15,6 +15,7 @@ function Login() {
     const password = e.target.password.value;
     const firstname = e.target.firstname.value;
     const lastinitial = e.target.lastinitial.value;
+    const communityPoints = 0 
 
     createUserWithEmailAndPassword(userDatabase, email, password)
       .then((userCredential) => {
@@ -25,12 +26,13 @@ function Login() {
         return setDoc(userDocRef, {
           firstname,
           lastinitial,
-          uid
+          uid,
+          communityPoints
         });
       })
       .then(() => {
         console.log("User data saved to Firestore");
-        history("/"); // Navigate to home page after successful signup and Firestore entry
+        history("/events"); // Navigate to home page after successful signup and Firestore entry
       })
       .catch((err) => {
         console.error("Error signing up", err);

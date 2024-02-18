@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import LearnMore from "../components/LearnMore.jsx" // Import LearnMore component, adjust path as necessary
 import './Home.css'; // Ensure this path is correct based on your project structure
