@@ -35,4 +35,4 @@ def plot_sports_distribution(park_name, output_folder='graph_outputs', title_fon
     plt.show()
 
 
-plot_sports_distribution('Williamsbridge Oval', output_folder='graph_outputs', title_font='Georgia')
+plot_sports_distribution('Thomas Jefferson Park', output_folder='graph_outputs', title_font='Georgia')
