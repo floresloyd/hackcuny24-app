@@ -1,4 +1,4 @@
-/* Reset.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300..700&display=swap');
 
 /* Style for the overall page layout */
 .Reset {
@@ -12,7 +12,7 @@
 
 /* Style for the .Reset-container */
 .Reset-container {
-    width: 50vw; /* Takes up half of the viewport width */
+    width: 50vw; /* Takes up half of the viewport width */ 
     max-width: 400px; /* Maximum width */
     padding: 20px;
     position: absolute; /* Absolutely position the container */
