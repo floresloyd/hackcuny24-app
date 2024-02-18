@@ -1,4 +1,4 @@
-# MOVE NYC
+# MOVE NYC for HackCUNY24'
 
 ## Inspiration
 MOVE NYC is a dynamic fitness app designed to engage users with its interactive frontend, fostering excitement and motivation in their fitness journey. The app integrates a responsive chatbot, Tuki, for real-time support and personalized recommendations, enhancing the interactive and personalized health and wellness experience.
