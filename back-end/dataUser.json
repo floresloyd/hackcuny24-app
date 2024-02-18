@@ -1,0 +1,50 @@
+{
+    "userActivities": {
+        "date": "2024-02-17",
+        "activities": [
+            {
+                "activityType": "walking",
+                "durationMinutes": 45,
+                "steps": 5500,
+                "calories": 200
+            },
+            {
+                "activityType": "running",
+                "durationMinutes": 30,
+                "steps": 4000,
+                "calories": 350
+            }
+        ]
+    },
+    "heartRateSummary": {
+        "date": "2024-02-17",
+        "averageBpm": 72,
+        "restingBpm": 60,
+        "maxBpm": 155,
+        "minBpm": 58
+    },
+    "sleepAnalysis": {
+        "date": "2024-02-16",
+        "totalSleepHours": 8,
+        "sleepStages": {
+            "light": 4.5,
+            "deep": 2.5,
+            "rem": 1
+        }
+    },
+    "weight": {
+        "date": "2024-02-17",
+        "weightKg": 70,
+        "bmi": 22
+    },
+    "nutrition": {
+        "date": "2024-02-17",
+        "caloriesIntake": 2200,
+        "waterConsumptionLiters": 2.5,
+        "macroNutrients": {
+            "carbohydrates": 55,
+            "protein": 20,
+            "fat": 25
+        }
+    }
+}
