@@ -83,3 +83,7 @@
 .handleForgotPassword:hover {
     color: #353535; /* Darken the text on hover */
 }
+
+h1 {
+    text-align: center;
+}
