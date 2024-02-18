@@ -1,7 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
-import pandas as pd
 
 
 def create_bar_graph(csv_file):

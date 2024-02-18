@@ -12,10 +12,12 @@ import { useEffect, useState } from 'react';
 
 function App() {
   
+
+  // NYC-Events-API data
   const [data, setData] = useState(null)
 
   const getData = () => {
-    fetch("http://127.0.0.1:8080/get-nyc-events")
+    fetch("https://127.0.0.1:8080/get-nyc-events")
     .then(response => { return response.json()
     })
     .then(data => {
