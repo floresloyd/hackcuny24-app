@@ -1,0 +1,382 @@
+{
+    "dataSource": [
+        {
+            "application": {
+                "packageName": "com.google.android.gms"
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.active_minutes:com.google.android.gms:merge_active_minutes",
+            "dataStreamName": "merge_active_minutes",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "integer",
+                        "name": "duration"
+                    }
+                ],
+                "name": "com.google.active_minutes"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "detailsUrl": "",
+                "packageName": "com.google.ios.fit",
+                "version": ""
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.active_minutes:com.google.ios.fit:appleinc.:iphone:c897c905:top_level",
+            "dataStreamName": "top_level",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "integer",
+                        "name": "duration"
+                    }
+                ],
+                "name": "com.google.active_minutes"
+            },
+            "device": {
+                "manufacturer": "appleinc.",
+                "model": "iphone",
+                "type": "phone",
+                "uid": "c897c905"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "packageName": "com.google.android.gms"
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.activity.segment:com.google.android.gms:merge_activity_segments",
+            "dataStreamName": "merge_activity_segments",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "integer",
+                        "name": "activity"
+                    }
+                ],
+                "name": "com.google.activity.segment"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "detailsUrl": "",
+                "packageName": "com.google.ios.fit",
+                "version": ""
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.activity.segment:com.google.ios.fit:appleinc.:iphone:c897c905:top_level",
+            "dataStreamName": "top_level",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "integer",
+                        "name": "activity"
+                    }
+                ],
+                "name": "com.google.activity.segment"
+            },
+            "device": {
+                "manufacturer": "appleinc.",
+                "model": "iphone",
+                "type": "phone",
+                "uid": "c897c905"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "packageName": "com.google.android.gms"
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.calories.expended:com.google.android.gms:merge_calories_expended",
+            "dataStreamName": "merge_calories_expended",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "floatPoint",
+                        "name": "calories"
+                    }
+                ],
+                "name": "com.google.calories.expended"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "detailsUrl": "",
+                "packageName": "com.google.ios.fit",
+                "version": ""
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.calories.expended:com.google.ios.fit:appleinc.:iphone:c897c905:top_level",
+            "dataStreamName": "top_level",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "floatPoint",
+                        "name": "calories"
+                    }
+                ],
+                "name": "com.google.calories.expended"
+            },
+            "device": {
+                "manufacturer": "appleinc.",
+                "model": "iphone",
+                "type": "phone",
+                "uid": "c897c905"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "packageName": "com.google.android.gms"
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.distance.delta:com.google.android.gms:merge_distance_delta",
+            "dataStreamName": "merge_distance_delta",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "floatPoint",
+                        "name": "distance"
+                    }
+                ],
+                "name": "com.google.distance.delta"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "detailsUrl": "",
+                "packageName": "com.google.ios.fit",
+                "version": ""
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.distance.delta:com.google.ios.fit:appleinc.:iphone:c897c905:top_level",
+            "dataStreamName": "top_level",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "floatPoint",
+                        "name": "distance"
+                    }
+                ],
+                "name": "com.google.distance.delta"
+            },
+            "device": {
+                "manufacturer": "appleinc.",
+                "model": "iphone",
+                "type": "phone",
+                "uid": "c897c905"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "packageName": "com.google.android.gms"
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.heart_minutes:com.google.android.gms:merge_heart_minutes",
+            "dataStreamName": "merge_heart_minutes",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "floatPoint",
+                        "name": "intensity"
+                    }
+                ],
+                "name": "com.google.heart_minutes"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "detailsUrl": "",
+                "packageName": "com.google.ios.fit",
+                "version": ""
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.heart_minutes:com.google.ios.fit:appleinc.:iphone:c897c905:top_level",
+            "dataStreamName": "top_level",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "floatPoint",
+                        "name": "intensity"
+                    }
+                ],
+                "name": "com.google.heart_minutes"
+            },
+            "device": {
+                "manufacturer": "appleinc.",
+                "model": "iphone",
+                "type": "phone",
+                "uid": "c897c905"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "packageName": "com.google.android.gms"
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.speed:com.google.android.gms:merge_speed",
+            "dataStreamName": "merge_speed",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "floatPoint",
+                        "name": "speed"
+                    }
+                ],
+                "name": "com.google.speed"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "detailsUrl": "",
+                "packageName": "com.google.ios.fit",
+                "version": ""
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.speed:com.google.ios.fit:appleinc.:iphone:c897c905:top_level",
+            "dataStreamName": "top_level",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "floatPoint",
+                        "name": "speed"
+                    }
+                ],
+                "name": "com.google.speed"
+            },
+            "device": {
+                "manufacturer": "appleinc.",
+                "model": "iphone",
+                "type": "phone",
+                "uid": "c897c905"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "packageName": "com.google.android.gms"
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.step_count.delta:com.google.android.gms:estimated_steps",
+            "dataStreamName": "estimated_steps",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "integer",
+                        "name": "steps"
+                    }
+                ],
+                "name": "com.google.step_count.delta"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "packageName": "com.google.android.gms"
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.step_count.delta:com.google.android.gms:merge_step_deltas",
+            "dataStreamName": "merge_step_deltas",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "integer",
+                        "name": "steps"
+                    }
+                ],
+                "name": "com.google.step_count.delta"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "detailsUrl": "",
+                "packageName": "com.google.ios.fit",
+                "version": ""
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "derived:com.google.step_count.delta:com.google.ios.fit:appleinc.:iphone:c897c905:top_level",
+            "dataStreamName": "top_level",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "integer",
+                        "name": "steps"
+                    }
+                ],
+                "name": "com.google.step_count.delta"
+            },
+            "device": {
+                "manufacturer": "appleinc.",
+                "model": "iphone",
+                "type": "phone",
+                "uid": "c897c905"
+            },
+            "type": "derived"
+        },
+        {
+            "application": {
+                "detailsUrl": "",
+                "packageName": "com.google.android.gms",
+                "version": ""
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "raw:com.google.distance.delta:com.google.android.gms:appleinc.:iphone:c897c905:high_fidelity_from_activity",
+            "dataStreamName": "high_fidelity_from_activity",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "floatPoint",
+                        "name": "distance"
+                    }
+                ],
+                "name": "com.google.distance.delta"
+            },
+            "device": {
+                "manufacturer": "appleinc.",
+                "model": "iphone",
+                "type": "phone",
+                "uid": "c897c905"
+            },
+            "type": "raw"
+        },
+        {
+            "application": {
+                "detailsUrl": "",
+                "packageName": "com.google.android.gms",
+                "version": ""
+            },
+            "dataQualityStandard": [],
+            "dataStreamId": "raw:com.google.step_count.delta:com.google.android.gms:appleinc.:iphone:c897c905:derive_step_deltas",
+            "dataStreamName": "derive_step_deltas",
+            "dataType": {
+                "field": [
+                    {
+                        "format": "integer",
+                        "name": "steps"
+                    }
+                ],
+                "name": "com.google.step_count.delta"
+            },
+            "device": {
+                "manufacturer": "appleinc.",
+                "model": "iphone",
+                "type": "phone",
+                "uid": "c897c905"
+            },
+            "type": "raw"
+        }
+    ]
+}

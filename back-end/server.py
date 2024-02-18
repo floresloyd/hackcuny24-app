@@ -114,8 +114,23 @@ def get_all_data_sources():
     # Build the fitness service using the credentials
     service = build('fitness', 'v1', credentials=credentials)
     data_sources_result = service.users().dataSources().list(userId='me').execute()
-    return jsonify(data_sources_result)
 
+    # Scan through data_sources_result and print 'steps'
+    for data_source in data_sources_result.get('dataSource', []):
+        data_type = data_source.get('dataType', {}).get('name', '')
+        if data_type == 'com.google.step_count.delta':
+            print(f"Data Source ID: {data_source.get('dataStreamId')}")
+            print(f"Data Source Name: {data_source.get('dataStreamName')}")
+            print("Steps:")
+
+            # Extracting steps data
+            for field in data_source.get('dataType', {}).get('field', []):
+                if field.get('name') == 'steps':
+                    steps_data = data_source.get('dataStreamId')
+                    print(steps_data)
+                    break
+
+    return jsonify(data_sources_result)
 
 # Returns heart-rate data from DATA SOURCE: derived:com.google.activity.segment:com.google.android.gms:merge_activity_segments
 @app.route('/get-heart-rate-data')
@@ -133,6 +148,7 @@ def get_heart_rate_data():
     past_millis = int(past.timestamp()) * 1000
 
     # Specify the data source and dataset for heart rate
+    service = build('fitness', 'v1', credentials=credentials)
     data_source = "derived:com.google.activity.segment:com.google.android.gms:merge_activity_segments"
     dataset = f"{past_millis}-{now_millis}"
 
