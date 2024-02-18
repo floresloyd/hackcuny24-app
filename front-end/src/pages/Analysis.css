@@ -47,3 +47,29 @@
     max-height: 50%;
     max-width: 35%;
   }
+  .fixed-container {
+    position: fixed; /* Keep it fixed during scroll */
+    bottom: 10px; /* Distance from bottom */
+    left: 10px; /* Distance from left */
+    background-color: black; /* Black background */
+    color: white; /* White text color */
+    padding: 8px; /* Some padding around the content */
+    display: flex; /* To align logo and text side by side */
+    align-items: center; /* Center items vertically */
+    border-radius: 4px; /* Optional: adds rounded corners */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .fixed-link {
+    display: flex; /* To align logo and text side by side */
+    align-items: center; /* Center items vertically */
+    text-decoration: none; /* Remove underline from link */
+    color: white; /* White text color */
+  }
+  
+  .fixed-logo {
+    margin-right: 8px; /* Space between logo and text */
+    width: 24px; /* Set logo size */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
