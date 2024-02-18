@@ -30,7 +30,9 @@ function EventCard({
     
   })  {
     const fullAddress = `${address_line1} ${address_line2}, ${city}, ${zip}`;
-    
+    const encodedAddress = encodeURIComponent(fullAddress);
+    const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD7ItWkK5lPSvzHyUPw-63GQQHD8k-JGtM&q=${encodedAddress}`;
+
     
     const handleJoinEvent = async () => {
         if (userUID === authorUID) {
@@ -104,16 +106,26 @@ function EventCard({
     return (
         <div className="event-card">
             <div className="event-header">
-                <div className="event-tag">{tag}</div>
+                <div className="event-tag">🏷️{tag}</div>
                 <div className="event-location">
                     <div className="event-title">{title}</div>
                 </div>
-                <div className="event-joined">People Joined {joinedUsers.length}/{maxJoined}</div>
+                <div className="event-joined">👥 People Joined {joinedUsers.length}/{maxJoined}</div>
             </div>
             <div className="event-description">{description}</div>
-            <div className="event-date">{date}</div>
-            <div className="event-location">{fullAddress}</div>
-      <div className="event-author">{authorName}</div>
+            <div className="event-date">📅{date}</div>
+            <div className="event-location">📍{fullAddress}</div>
+
+      <iframe
+          width="600"
+          height="450"
+          style={{ border: "0" }}
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+          src={googleMapsEmbedUrl}
+        />
+              <div className="event-author">🗣️{authorName}</div>
  <button className="event-join-button" onClick={handleJoinEvent}>JOIN</button>
  <button className="event-show-participants-button" onClick={handleShowParticipants}>Show Participants</button>
         </div>

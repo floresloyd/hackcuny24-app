@@ -1,39 +1,73 @@
-
 .event-card {
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     border-radius: 8px;
     padding: 20px;
     margin: 10px 0;
     color: white;
-    background-color: black;
+    background-color: #121212; /* Adjust the color to match your theme */
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left; /* Align text to the left */
 }
 
 .event-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
+    align-items: center; /* Align items vertically center */
+    margin-bottom: 20px;
 }
 
-.event-title-date {
-    text-align: left;
+.event-tag {
+    background-color: #333; /* Tag background */
+    color: #fff; /* Tag text color */
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem; /* Smaller font size for the tag */
+    align-self: flex-start; /* Align to the start of the flex container */
 }
 
-.event-title, .event-description, .event-author, .event-location {
-    margin-bottom: 10px;
-    text-align: center;
+.event-location .event-title {
+    font-size: 1.5rem; /* Larger font size for the title */
+    font-weight: bold; /* Make the title bold */
+    flex-grow: 1; /* Allow the title to take up available space */
 }
 
+.event-joined {
+    background-color: #333; /* Background for the joined/max joined */
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    align-self: flex-end; /* Align to the end of the flex container */
+}
 
-.event-join-button {
+.event-description {
+    font-size: 1rem; /* Adjust font size as needed */
+    border-top: 1px solid #666; /* Separator line */
+    border-bottom: 1px solid #666; /* Separator line */
+    padding: 20px 0; /* Padding above and below the description */
+}
+
+.event-date, .event-location, .event-author {
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.event-join-button, .event-show-participants-button {
     background-color: white;
     color: black;
-    border: none;
+    border: 1px solid #666; /* Add a border to the button */
+    border-radius: 4px; /* Slightly round the corners */
     padding: 10px 20px;
     text-transform: uppercase;
     cursor: pointer;
-    align-self: flex-start;
+    margin-top: 20px; /* Add space above the button */
+    width: 100%; /* Make the button extend full width */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.event-show-participants-button {
+    background-color: #444; /* Different color for the 'Show Participants' button */
+    color: white;
+    margin-top: 10px; /* Add space between buttons */
 }
