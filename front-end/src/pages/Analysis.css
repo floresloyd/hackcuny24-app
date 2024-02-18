@@ -1,0 +1,49 @@
+.analysis-container {
+    padding-top: 20px; /* Add top padding */
+    margin: 50px 50px 50px 50px
+  }
+  
+  .graph-container {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row; /* This ensures that the children are in a row */
+    align-items: flex-start; /* Aligns items to the start of the container */
+  }
+  
+  .graph-explanation {
+    flex: 1; /* This will allow the text container to fill the remaining space */
+    padding-left: 20px; /* Add some space between text and image */
+    text-align: center;
+  }
+  
+  .bar-graph img {
+    max-width: 100%; /* Ensures the image does not exceed its parent's width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  
+  .carousel-container {
+    margin-top: 100px; /* Add some space above the carousel */
+  }
+  
+  /* Make sure the carousel images are half the size of the original images */
+  .carousel .slide img {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .carousel-text{
+    text-align: center;
+  }
+  
+
+  .pie-graph {
+    max-width: 50%;
+  }
+
+  .bar-graph {
+    max-height: 50%;
+    max-width: 35%;
+  }

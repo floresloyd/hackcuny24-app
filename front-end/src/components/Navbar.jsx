@@ -37,10 +37,10 @@ function Navbar() {
                 <a href="/analysis" className="nav-link">Analysis</a>
             </div>
             {user ? (
-                <button onClick={handleSignOut} className="nav-link sign-out">Sign Out</button>
-            ) : (
-                <Link to="/login" className="nav-link sign-out">Login</Link>
-            )}
+                    <button onClick={handleSignOut} className="nav-link sign-out">Sign Out</button>
+                ) : (
+                    <Link to="/login" className="nav-link sign-in">Login</Link>
+                )}
         </nav>
     </div>
     );

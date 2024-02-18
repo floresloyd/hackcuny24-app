@@ -10,7 +10,7 @@
 }
 
 .nav-link:hover {
-    color:grey; /* Slight color change on hover for visual feedback */
+    color:black; /* Slight color change on hover for visual feedback */
 }
 
 .navbar {
@@ -48,3 +48,32 @@
     justify-content: center; /* Horizontally center the text, if needed */
     margin-right: 20px;
 }
+
+
+/* New styles for sign-in and sign-out buttons */
+.sign-in {
+    color: #4CAF50; /* Subtle green for sign in */
+  }
+  
+  .sign-out {
+    color: #F44336; /* Subtle red for sign out */
+  }
+  
+  /* Modify existing .sign-out for general button styling */
+  .sign-out, .sign-in {
+      text-decoration: none;
+      margin: 0 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding-right: 20px;
+      font-family: 'Rubik', sans-serif;
+      font-weight: bold;
+      font-size: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+  }
+
+  

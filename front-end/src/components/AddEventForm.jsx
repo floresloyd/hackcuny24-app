@@ -46,7 +46,7 @@ function AddEventForm({ onEventAdded, onClose, author, uid }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} >
+<form className="addEventForm" onSubmit={handleSubmit}>
       <input className='Tag' name="tag" type="text" placeholder="Tag" onChange={handleChange} />
       <input className='Title' name="title" type="text" placeholder="Title" onChange={handleChange} />
       <textarea className='description' name="description" placeholder="Description" onChange={handleChange}></textarea>
