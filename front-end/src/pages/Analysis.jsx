@@ -11,6 +11,7 @@ import Obesity from "../Public/Photos/obesity1.png"
 
 function Analysis() {
     return (
+
         <div className="analysis-container">
             <div className="graph-container">
                 <div className="bar-graph">
@@ -19,14 +20,14 @@ function Analysis() {
                 <div className="graph-explanation">
                 <h1> The bar graph reveals a concerning rise in obesity across NYC boroughs, with Queens
                     and brooklyn standing out at almost 50% of its population facing weight-related issues.</h1>
-                <p> This
+                <h0> This
                     alarming trend highlights the urgent need for intervention. However, a glimmer of hope emerges from
                     other graphs showcasing diverse sports activities in popular parks. Beyond recreation, these activities
                     build a healthier community. Engaging in sports not only combats obesity but also promotes cardiovascular
                     health and community bonding. The key lies in fostering environments that encourage active living, turning parks
                     into hubs for collective well-being. By embracing this approach, we not only tackle
                     obesity but also nurture resilient,
-                    interconnected communities.</p>
+                    interconnected communities.</h0>
                 </div>
             </div>
             <div className="carousel-container">
