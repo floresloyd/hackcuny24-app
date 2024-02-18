@@ -1,0 +1,52 @@
+/* AddEventForm.css */
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    background: #1a1a1a; /* dark background as per the image */
+    padding: 40px;
+    border: 1px solid #333; /* subtle border around the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  form input[type="text"],
+  form input[type="date"],
+  form input[type="number"],
+  form textarea {
+    background: #333;
+    border: 1px solid #444;
+    color: white;
+    padding: 10px;
+  }
+  
+  form input[type="text"]::placeholder,
+  form input[type="date"]::placeholder,
+  form input[type="number"]::placeholder,
+  form textarea::placeholder {
+    color: #bbb;
+  }
+  
+  form .description {
+    grid-column: 1 / -1; /* makes description span two columns */
+  }
+  
+  form button {
+    padding: 10px 20px;
+    grid-column: span 1; /* each button takes up 1 column */
+    cursor: pointer;
+    background: #555;
+    color: white;
+    border: 1px solid #666;
+  }
+  
+  form .Submit {
+    justify-self: end; /* aligns the submit button to the right */
+  }
+  
+  form .Close {
+    justify-self: start; /* aligns the close button to the left */
+  }
+  
+  /* Add styles for specific class names to target each input field if needed */
+  

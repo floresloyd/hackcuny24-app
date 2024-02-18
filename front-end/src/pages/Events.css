@@ -1,0 +1,158 @@
+  .buttons-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start; /* Aligns buttons to the start */
+    flex-wrap: wrap; /* Allows buttons to wrap instead of overflow */
+    gap: 10px; /* Spacing between buttons */
+  }
+  
+  .addEventButton, .sortButton {
+    background-color: #1D2088; /* Deep blue background color */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125rem; /* Using rem for scalability */
+    border: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    min-width: 120px; /* Minimum width for button text to fit */
+    white-space: nowrap; /* Prevents the text inside the button from wrapping */
+  }
+
+
+
+.addEventButton:hover, .sortButton:hover {
+  background-color: grey; /* Feedback effect on hover */
+}
+
+/* Ensure the dropdown is positioned correctly relative to the sort button */
+.sortButtonContainer {
+  position: relative; /* This establishes a positioning context for absolute children */
+  display: flex;
+  align-items: center; /* Aligns buttons vertically */
+  gap: 10px; /* Spacing between buttons */
+
+}
+.sortButtonWrapper {
+  position: relative; /* Establish positioning context for the dropdown */
+  display: inline-block; /* Aligns with the inline flow of the document */
+}
+  
+.dropdown {
+  position: absolute;
+  top: 100%; /* Positioned right below the sort button */
+  left: 0; /* Align to the left edge of the sort button */
+  width: max-content; /* Ensures the dropdown width is as wide as its content */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+  
+  .dropdown-item {
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .events-container {
+    max-width: 100%; 
+    font-family: 'Roboto', sans-serif;
+    padding: 30px 30px 30px 30px;
+  }
+
+  .events-container {
+    padding-top: 80px; /* Adjust based on Navbar height */
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../Public/Photos/Sky.png'); /* Adjust the path as necessary */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    min-height: 100vh; /* Ensure it covers the full height of the viewport */
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .addEventButton, .sortButton {
+    background-color: #1D2088; /* Updated button color */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    cursor: pointer;
+    padding: 15px 20px; /* Corrected typo and increased padding for a larger button size */
+    font-size: 18px; /* Increased font size for better readability */
+    margin-left: 10px; /* Additional spacing for 'Add event' button */
+  }
+  
+  .addEventButton:hover, .sortButton:hover {
+    background-color: grey;
+  }
+  
+  .sortButtonContainer {
+    position: relative;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 9;
+  }
+  
+  .dropdown-item {
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f2f2f2;
+  }
+  
+
+
+
+  /** MODAL OVERLAY */
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1); /* Black background with opacity */
+    z-index: 1000; /* Ensure it sits above other content */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the form horizontally and vertically */
+  }
+
+  .modal-backdrop {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 1000; /* High z-index to ensure it sits on top of other content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
