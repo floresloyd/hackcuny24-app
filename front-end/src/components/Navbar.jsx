@@ -34,6 +34,8 @@ function Navbar() {
             <div> {/* Container for grouped items */}
                 <a href="/" className="nav-link">Home</a>
                 <a href="/events" className="nav-link">Events</a>
+                <a href="/leaderboard" className="nav-link">Leaderboard</a>
+                <a href="/analysis" className="nav-link">Analysis</a>
             </div>
             {user ? (
                 <button onClick={handleSignOut} className="nav-link sign-out">Sign Out</button>

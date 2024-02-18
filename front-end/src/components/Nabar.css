@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 .nav-link {
-    text-decoration: underline; /* Underline all links */
+    text-decoration: none; /* Underline all links */
     color: black; /* Adjust color as needed for visibility against your background */
     margin: 0 15px; /* Adjust spacing as needed */
     background: none; /* For the button to match other links */
@@ -25,20 +25,20 @@
     top: 0;
     left: 0;
     z-index: 3;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: bold;
     font-size: 24px;
 }
 
 .sign-out {
-    text-decoration: underline; /* Match nav-link style */
+    text-decoration: none; /* Match nav-link style */
     color: black; /* Match nav-link color */
     margin: 0 15px; /* Match nav-link margin */
     background: none; /* Ensure consistency with nav-link */
     border: none; /* Remove button border for consistency */
     cursor: pointer; /* Cursor style for clickable elements */
     padding-right: 20px; /* Specific right padding as requested */
-    font-family: 'Roboto', sans-serif; /* Ensure font consistency */
+    font-family: 'Rubik', sans-serif; /* Ensure font consistency */
     font-weight: bold; /* Match nav-link font weight */
     font-size: 24px; /* Match nav-link font size */
     /* Align text to center if needed */
